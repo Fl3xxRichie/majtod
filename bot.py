@@ -173,6 +173,10 @@ class MajTod:
                 self.log(f"{yellow}connection close without response !")
                 await asyncio.sleep(3)
                 continue
+            except Exception as e:
+                self.log(f"{yellow}e")
+                await asyncio.sleep(3)
+                continue
 
     def is_expired(self, token):
         if token is None or isinstance(token, bool):
